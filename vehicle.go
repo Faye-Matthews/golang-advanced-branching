@@ -4,6 +4,20 @@ import (
 
 )
 
+type vehicle interface
+
+type car struct {
+	model, make, typeVehicle string
+}
+
+type truck struct {
+	model, make, typeVehicle string
+}
+
+type bike struct {
+	model, make string
+}
+
 
 // Values array for the feedback.json file
 
