@@ -47,6 +47,10 @@ type feedbackResult struct {
 	feedbackNeutral  int
 }
 
+var vehicleResult map[string]feedbackResult
+
+var inventory []vehicle
+
 type rating float32
 
 const (
@@ -57,12 +61,7 @@ const (
 	extraNegative rating = -1.2
 )
 
-var vehicleResult map[string]feedbackResult
-
-var inventory []vehicle
-
-func init() {
-
+func main() {
 	inventory := []vehicle{
 		bike{"FTR 1200", "Indian"},
 		bike{"Iron 1200", "Harley"},
@@ -75,12 +74,6 @@ func init() {
 		car{"Camry", "Toyota", "Sedan"},
 		truck{"F-150", "Ford", "Truck"},
 		truck{"RAM1500", "Dodge", "Truck"}}
-
-	vehicleResult := make(map[string]feedbackResult)
-
-}
-
-func main() {
 
 	// Generate ratings for the different vehicles
 	generateRating()
